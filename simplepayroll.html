@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://catgempesaw.w3spaces.com/styles.css">
+    <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
+    <title>Factorial, Sum and Average Calculator</title>
+    <style>
+        .container{
+            background-color: blanchedalmond;
+            padding: 20px;
+            display: block;
+            border-radius: 5px;
+        }
+        .container input{
+            width: 50%;
+            padding: 10px;
+            border: 1px solid red;
+            box-sizing: border-box;
+            resize: vertical;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid red;
+            box-sizing: border-box;
+            resize: vertical;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="conversion.html">Conversion</a>
+    <a href="incometax.html">Income Tax Calculator</a>
+    <a href="sum.html">Factorial, Sum and Average of First N Natural Numbers</a>
+    <a class="active" href="simplepayroll.html">Simple Payroll</a>
+  </div>
+<!--Simple Payroll HTML-->
+<div class="container">
+        <label for="name">Employee Name:</label><br>
+        <input id="name" name="name" type="text"><br>
+        
+        <label for="days">Days Worked:</label><br>
+        <input id="days" name="days" type="number"><br>
+        
+        <label for="rate">Daily Rate:</label><br>
+        <input id="rate" name="rate" type="number"><br>
+        
+        <label for="deduction">Deduction Amount:</label><br>
+        <input id="deduction" name="deduction" type="number">
+        <br>
+        <button class="button" onclick="addRow()">ADD</button>
+        <br>
+        <label for="delete">Delete Item:</label><br>
+        <input id="delete" name="delete" type="number"> <br>
+        <button class="button" onclick="removeEmployee()">DELETE</button>
+        <br>
+        <label for="count">Employee Count</label><br>
+        <input id="count" name="count" type="number" readonly>
+        <br>
+        <button class="button" onclick="clearAll()">REMOVE ALL</button> 
+</div>
+<p id="table"></p>
+<!--Simple Payroll JS-->
+<script>
+    var payroll=[];
+    //Clear All
+    function clearAll(){
+        var toclear;
+        toclear=confirm("Delete all item(s) from payroll?");
+        if(toclear){
+            payroll=[];
+            document.getElementById("count").value=payroll.length;
+            document.getElementById("table").innerHTML="";          
+        }
+    }
+    //Add data to payroll
+    function addRow(){
+        var payrollData = {
+            name: "",
+            days: 1,
+            rate: 1,
+            deduction: 1,
+            gross: 1,
+            net: 1
+        }
+        payrollData.name = document.getElementById("name").value;
+        payrollData.days = document.getElementById("days").value*1;
+        payrollData.rate = document.getElementById("rate").value*1;
+        payrollData.deduction = document.getElementById("deduction").value*1;
+        payrollData.gross = payrollData.days*payrollData.rate;
+        payrollData.net = payrollData.gross-payrollData.deduction;
+
+        console.log(payrollData.name);
+        console.log(payrollData.days);
+        console.log(payrollData.rate);
+        console.log(payrollData.deduction);
+        
+        payroll.push(payrollData);
+        console.log(payroll.length);
+        document.getElementById("count").value = payroll.length;
+
+        showpayroll();
+    }
+    //Delete employee
+    function removeEmployee(){
+        var todelete;
+        var itemno;
+        itemno = document.getElementById("delete").value;
+        todelete = confirm("Delete item no. "+itemno+"?");
+        if(todelete){
+            payroll.splice(itemno-1,1);
+            document.getElementById("count").value = payroll.length;
+            showpayroll();
+        }
+    }
+
+    //Show Payroll table
+    function showpayroll(){
+      var theader = "<thead>"
+        +"<tr>"
+        +'<th style="text-align: center">No.</th>'
+        +'<th style="text-align: center">Employee Name'
+        +'<th style="text-align: center">Days Worked</th>'
+        +'<th style="text-align: center">Daily Rate</th>'
+        +'<th style="text-align: center">Gross Pay</th>'
+        +'<th style="text-align: center">Deduction Amount</th>'
+        +'<th style="text-align: center">Net Pay</th>'
+        +"</tr>"
+        +"</thead>"
+        
+        var tbody = ''
+        for(let i = 0;i < payroll.length; i++){
+          tbody += "<tr>"
+            + '<td style="text-align: center">'+(i+1)+'</td>'
+            + '<td style="text-align: center">'+payroll[i].name+'</td>'
+            + '<td style="text-align: center">'+payroll[i].days+'</td>'
+            + '<td style="text-align: center">'+payroll[i].rate+'</td>'
+            + '<td style="text-align: center">'+payroll[i].gross+'</td>'
+            + '<td style="text-align: center">'+payroll[i].deduction+'</td>'
+            + '<td style="text-align: center">'+payroll[i].net+'</td>'
+            + '</tr>'
+        }
+       document.getElementById("table").innerHTML="<table>"+theader+tbody+"</table>"
+    }
+  </script>
+</body>
+</html>

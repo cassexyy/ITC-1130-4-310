@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
+  <title>Conversion</title>
+  <style>
+    .conversion{
+      background-color: antiquewhite;
+      border: 5px solid pink;
+      border-radius: 10px;
+      width: 800px;
+      height: 300px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    .left{
+      position: relative;
+      top: 120px;
+      right: 150px;
+      text-align: center;
+    }
+    .right{
+      position: relative; 
+      top: 65px;
+      left: 150px;
+      text-align: center;
+    }
+    .icon{
+      text-align: center;
+      position: relative;
+      top: 88px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a class="active" href="conversion.html">Conversion</a>
+    <a href="incometax.html">Income Tax Calculator</a>
+    <a href="sum.html">Factorial, Sum and Average of First N Natural Numbers</a>
+    <a href="simplepayroll.html">Simple Payroll</a>
+  </div>
+
+  <!--Conversion HTML-->
+  <div class="conversion">
+  <label for="unit">Select the unit to convert: </label>
+  <select id="unit" onchange="checkValue();">
+    <option value="getF">Celsius to Fahrenheit</option>
+    <option value="getC">Fahrenheit to Celsius</option>
+    <option value="getFt">Meters to Feet</option>
+    <option value="getM">Feet to Meters</option>
+  </select>
+  <br>
+  
+  <div class="left">
+    <input id="input" type="number" style="height:30px;width:140px;" placeholder="Type Here" oninput="checkValue(this.value)">
+  </div>
+  <div class="left">
+    <label for="input">Enter value to convert:</label> 
+  </div>
+<div class="icon"><i class="fa-solid fa-equals fa-xl" ></i></div>
+  <div class="right">
+    <span id="output"> 0 </span>
+  </div>
+  <div class="right"> 
+    <label for="output">Converted Value: </label>
+  </div>
+</div>
+
+  <!--Conversion JS-->
+  <script>
+  function getSelectValue(){
+        var selectedValue = document.getElementById("unit").value;
+        console.log(selectedValue);
+        return selectedValue;
+    }
+
+    function checkValue(value, conversion){
+        var value = getSelectValue();
+        var conversion = document.getElementById("input").value*1;
+        if(value=="getF"){
+            document.getElementById("output").innerHTML = ((conversion*1.8)+32).toFixed(2);
+        }else if(value=="getC"){
+            document.getElementById("output").innerHTML = ((conversion-32)*5/9).toFixed(2);
+        }else if(value=="getFt"){
+            document.getElementById("output").innerHTML = (conversion*3.28084).toFixed(2);
+        }else if(value=="getM"){
+            document.getElementById("output").innerHTML = ((conversion/3.28084)).toFixed(2);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
+    <title>Income Tax Calculator</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="conversion.html">Conversion</a>
+        <a class="active" href="incometax.html">Income Tax Calculator</a>
+        <a href="sum.html">Factorial, Sum and Average of First N Natural Numbers</a>
+        <a href="simplepayroll.html">Simple Payroll</a>
+    </div>
+
+<!--Income Tax HTML-->
+  <p>
+    <label for"taxInput">Taxable Income Value:</label>
+    <input id="taxInput" type="number" placeholder="Type Here" oninput="computeTax(this.value)">
+  </p>
+  <p>Income Tax: <span id="result">0</span></p>
+<!--Income Tax JS-->
+<script>
+    function computeTax(taxIncome){
+      var taxIncome = document.getElementById("taxInput").value;
+      console.log(taxIncome);
+      if(taxIncome<=250000){
+        taxIncome = 0;
+      }else if(taxIncome>250000 && taxIncome<=400000){
+        taxIncome = ((taxIncome-250000)*0.20);
+      }else if(taxIncome>400000 && taxIncome<=800000){
+        taxIncome = ((taxIncome-400000)*0.25+30000);
+      }else if(taxIncome>800000 && taxIncome<=2000000){
+        taxIncome = ((taxIncome-800000)*0.30+130000);
+      }else if(taxIncome>2000000 && taxIncome<=8000000){
+        taxIncome = ((taxIncome-2000000)*0.32+490000);
+      }else{
+        taxIncome = ((taxIncome-8000000)*0.35+2410000);
+      }
+      let formatted = new Intl.NumberFormat("en-US",{style: 'currency', currency: 'PHP'}).format(taxIncome);
+      document.getElementById("result").innerHTML = formatted;
+    }
+    
+</script>
+</body>
+</html>

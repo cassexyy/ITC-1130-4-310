@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://catgempesaw.w3spaces.com/styles.css">
+    <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
+    <title>Factorial, Sum and Average Calculator</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="conversion.html">Conversion</a>
+        <a href="incometax.html">Income Tax Calculator</a>
+        <a class="active" href="sum.html">Factorial, Sum and Average of First N Natural Numbers</a>
+        <a href="simplepayroll.html">Simple Payroll</a>
+    </div>
+
+<!--Sum HTML-->
+    <p>
+        <label for"integerInput">Input an integer:</label>
+        <input id="integerInput" type="number" placeholder="Type Here">
+        <button id="click" onclick="computeResult()"> Compute Sum </button>
+
+    </p>
+    <p>The <span id="nth">n</span><sup>th</sup> factorial is: <span id="factorial"></span></p>
+    <p>The sum of the first <span id="nthh">n</span> numbers is: <span id="sum"></span></p>
+    <p>The average of the first <span id="nthhh">n</span> numbers is: <span id="average"></span></p>
+
+<!--Sum JS-->
+    <script>
+        
+        function computeResult(input1, input2, input3, input4){
+            var input1 = document.getElementById("integerInput").value*1;
+            var input2 = document.getElementById("integerInput").value*1;
+            var input3 = document.getElementById("integerInput").value*1;
+            var input4 = document.getElementById("integerInput").value*1;
+
+            document.getElementById("nth").innerHTML = input1;
+            document.getElementById("nthh").innerHTML = input1; 
+            document.getElementById("nthhh").innerHTML = input1; 
+            
+            if(input1 < 0){
+            alert("Kindly input a positive integer.");
+            return 0;
+            }
+    //nth Factorial - while loop
+            var factorial = 1;
+            while(input1 > 1){
+                factorial = factorial * input1
+                --input1;
+            }
+            document.getElementById("factorial").innerHTML = factorial;
+            
+    //Sum - do while loop
+            var sum = 0;
+            do{
+                sum = sum + input2;
+                input2--;
+            }while(input2 > 0);
+            document.getElementById("sum").innerHTML = sum;
+
+    //Average - for loop
+            var sum2 = 0;
+            for(var i=0; i <= input3; i++){
+                var sum2 = sum2 + i;
+            }
+            var average = sum2 / input4;
+            console.log(average);
+            document.getElementById("average").innerHTML = average;
+        }
+    </script>
+</body>
+</html>
