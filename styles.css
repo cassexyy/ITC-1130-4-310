@@ -9,6 +9,7 @@
       font-weight: normal;
       height: 100%;
       font-family: "Inconsolata", sans-serif;
+      margin: auto;
   }
   /* Style the top navigation bar */
   .topnav {
@@ -32,11 +33,40 @@
     background-color: grey;
     color: white;
   }
-   
-  /* Style the footer */
-  .footer {
-    background-color: #f1f1f1;
-    padding: 10px;
+  
+  .content{
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+  }
+  .content p{
+    margin-top: 20px;
   }
   
-  
+  /* Style the Conversion */
+  .conversion{
+    background-color: antiquewhite;
+    border: 5px solid pink;
+    border-radius: 10px;
+    width: 800px;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .left{
+    position: relative;
+    top: 120px;
+    right: 150px;
+    text-align: center;
+  }
+  .right{
+    position: relative; 
+    top: 65px;
+    left: 150px;
+    text-align: center;
+  }
+  .icon{
+    text-align: center;
+    position: relative;
+    top: 88px;
+  }
