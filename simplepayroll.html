@@ -3,76 +3,83 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://catgempesaw.w3spaces.com/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
     <title>Factorial, Sum and Average Calculator</title>
     <style>
         .container{
+            border: 1px solid #ee6c4d ;
             background-color: blanchedalmond;
-            padding: 20px;
+            padding: 15px;
             display: block;
-            border-radius: 5px;
+            border-radius: 20px;
+            border-width: 5px;
+            float: left;
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
         }
         .container input{
-            width: 50%;
+            width: 80%;
             padding: 10px;
-            border: 1px solid red;
+            border: 1px solid #ee6c4d;
             box-sizing: border-box;
             resize: vertical;
             border-radius: 10px;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
         .button {
             width: 50%;
             padding: 10px;
-            border: 1px solid red;
+            border: 1px solid #ee6c4d;
             box-sizing: border-box;
             resize: vertical;
             border-radius: 10px;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
-        .button:hover {
-            background-color: #4CAF50;
+        #addbutton:hover {
+            background-color: green;
+            color: white;
+        }
+        #deletebutton:hover {
+            background-color: salmon;
             color: white;
         }
     </style>
 </head>
 <body>
 <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="conversion.html">Conversion</a>
-    <a href="incometax.html">Income Tax Calculator</a>
-    <a href="sum.html">Factorial, Sum and Average of First N Natural Numbers</a>
-    <a class="active" href="simplepayroll.html">Simple Payroll</a>
+    <a href="index.html">HOME</a>
+    <a href="conversion.html">CONVERSION</a>
+    <a href="incometax.html">INCOME TAX CALCULATOR</a>
+    <a href="sum.html">FACTORIAL/SUM/AVERAGE CALCULATOR</a>
+    <a class="active" href="simplepayroll.html">SIMPLE PAYROLL</a>
   </div>
 <!--Simple Payroll HTML-->
 <div class="container">
-        <label for="name">Employee Name:</label><br>
-        <input id="name" name="name" type="text"><br>
+        <label for="name">Employee Name</label><br>
+        <input id="name" name="name" placeholder="Employee Name" type="text"><br>
         
-        <label for="days">Days Worked:</label><br>
-        <input id="days" name="days" type="number"><br>
+        <label for="days">Days Worked</label><br>
+        <input id="days" name="days" placeholder="Number of Days Worked"  type="number"><br>
         
-        <label for="rate">Daily Rate:</label><br>
-        <input id="rate" name="rate" type="number"><br>
+        <label for="rate">Daily Rate</label><br>
+        <input id="rate" name="rate" placeholder="Daily Rate" type="number"><br>
         
-        <label for="deduction">Deduction Amount:</label><br>
-        <input id="deduction" name="deduction" type="number">
+        <label for="deduction">Deduction Amount</label><br>
+        <input id="deduction" name="deduction" placeholder="Deduction Amount" type="number">
         <br>
-        <button class="button" onclick="addRow()">ADD</button>
+        <button class="button" id="addbutton" onclick="addRow()">ADD</button>
         <br>
-        <label for="delete">Delete Item:</label><br>
-        <input id="delete" name="delete" type="number"> <br>
-        <button class="button" onclick="removeEmployee()">DELETE</button>
+        <label for="delete">Delete Item</label><br>
+        <input id="delete" name="delete" placeholder="Input Row Number to Delete"  type="number"> <br>
+        <button class="button" id="deletebutton" onclick="removeEmployee()">DELETE</button>
         <br>
         <label for="count">Employee Count</label><br>
         <input id="count" name="count" type="number" readonly>
         <br>
-        <button class="button" onclick="clearAll()">REMOVE ALL</button> 
+        <button class="button" id="deletebutton" onclick="clearAll()">REMOVE ALL</button> 
 </div>
 <p id="table"></p>
 <!--Simple Payroll JS-->
