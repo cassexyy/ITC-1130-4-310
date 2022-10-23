@@ -19,16 +19,17 @@
       </div>
 
 <!--Sum HTML-->
+<div class="sum">
+    <br><br>
     <p>
         <label for"integerInput">Input an integer:</label>
-        <input id="integerInput" type="number" placeholder="Type Here">
-        <button id="click" onclick="computeResult()"> Compute Sum </button>
-
+        <input id="integerInput" type="number" placeholder="0">
+        <button id="click" onclick="computeResult()">Compute</button>
     </p>
-    <p>The <span id="nth">n</span><sup>th</sup> factorial is: <span id="factorial"></span></p>
+    <p>The factorial of number <span id="nth">n</span><sup></sup> is: <span id="factorial"></span></p>
     <p>The sum of the first <span id="nthh">n</span> numbers is: <span id="sum"></span></p>
     <p>The average of the first <span id="nthhh">n</span> numbers is: <span id="average"></span></p>
-
+</div>
 <!--Sum JS-->
     <script>
         
@@ -52,7 +53,8 @@
                 factorial = factorial * input1
                 --input1;
             }
-            document.getElementById("factorial").innerHTML = factorial;
+            var factoriall=factorial.toLocaleString();
+            document.getElementById("factorial").innerHTML = factoriall;
             
     //Sum - do while loop
             var sum = 0;

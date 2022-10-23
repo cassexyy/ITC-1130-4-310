@@ -6,47 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
-    <title>Factorial, Sum and Average Calculator</title>
-    <style>
-        .container{
-            border: 1px solid #ee6c4d ;
-            background-color: blanchedalmond;
-            padding: 15px;
-            display: block;
-            border-radius: 20px;
-            border-width: 5px;
-            float: left;
-            width: 300px;
-            margin-left: 20px;
-            margin-top: 20px;
-        }
-        .container input{
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #ee6c4d;
-            box-sizing: border-box;
-            resize: vertical;
-            border-radius: 10px;
-            display: block;
-        }
-        .button {
-            width: 50%;
-            padding: 10px;
-            border: 1px solid #ee6c4d;
-            box-sizing: border-box;
-            resize: vertical;
-            border-radius: 10px;
-            display: block;
-        }
-        #addbutton:hover {
-            background-color: green;
-            color: white;
-        }
-        #deletebutton:hover {
-            background-color: salmon;
-            color: white;
-        }
-    </style>
+    <title>Simple Payroll</title>
 </head>
 <body>
 <div class="topnav">
@@ -58,25 +18,25 @@
   </div>
 <!--Simple Payroll HTML-->
 <div class="container">
-        <label for="name">Employee Name</label><br>
+        <label for="name">Employee Name</label>
         <input id="name" name="name" placeholder="Employee Name" type="text"><br>
         
-        <label for="days">Days Worked</label><br>
+        <label for="days">Days Worked</label>
         <input id="days" name="days" placeholder="Number of Days Worked"  type="number"><br>
         
-        <label for="rate">Daily Rate</label><br>
+        <label for="rate">Daily Rate</label>
         <input id="rate" name="rate" placeholder="Daily Rate" type="number"><br>
         
-        <label for="deduction">Deduction Amount</label><br>
+        <label for="deduction">Deduction Amount</label>
         <input id="deduction" name="deduction" placeholder="Deduction Amount" type="number">
         <br>
         <button class="button" id="addbutton" onclick="addRow()">ADD</button>
         <br>
-        <label for="delete">Delete Item</label><br>
+        <label for="delete">Delete Item</label>
         <input id="delete" name="delete" placeholder="Input Row Number to Delete"  type="number"> <br>
         <button class="button" id="deletebutton" onclick="removeEmployee()">DELETE</button>
         <br>
-        <label for="count">Employee Count</label><br>
+        <label for="count">Employee Count</label>
         <input id="count" name="count" type="number" readonly>
         <br>
         <button class="button" id="deletebutton" onclick="clearAll()">REMOVE ALL</button> 

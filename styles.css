@@ -33,7 +33,6 @@
     background-color: grey;
     color: white;
   }
-  
   .content{
     margin-top: 30px;
     text-align: center;
@@ -44,29 +43,188 @@
   }
   
   /* Style the Conversion */
-  .conversion{
-    background-color: antiquewhite;
-    border: 5px solid pink;
+  #unit{  
+    border-radius: 5px;
+    width: auto;
+    font-size: medium;
+    text-align: center;
+    padding: 2px;
+  }
+  #select{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .wrapp{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .wrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .left{
+    display: grid;
+    padding-left: 90px;
+   }
+   .equal {
+    font-size: 50px;
+    padding-bottom: 15px;
+   }
+   .right{
+     display: grid;
+     padding-right: 90px;
+   }
+   #convertedoutput{
+    border: 1px solid black;
+    width: 148px;
+    height: 30px;
+    padding-top: 11px;
+    background-color: white;
+    text-align: center;
+  }
+  #input{
+    padding: 4px;
+    text-align: center;
+  }
+ 
+  /* Style the Income Tax*/
+  .tax{
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(90, 61, 24);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .tax p{
+    height: 50px;  
+    line-height: 50px;
+    text-align: center;
+  }
+  .tax input{
+    width: 10%;
+    padding: 5px;
+    border: 1px solid #503027;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 10px;
+  }
+  #taxInput{
+    width: 20%;
+  }
+  #incometable{
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  /* Style the Calculator */
+  .sum{
+    background-color: rgb(255, 241, 233);
+    border: 5px solid rgb(90, 61, 24);
     border-radius: 10px;
     width: 800px;
     height: 300px;
     margin: auto;
     margin-top: 50px;
   }
-  .left{
-    position: relative;
-    top: 120px;
-    right: 150px;
-    text-align: center;
+  .sum p{
+  height: 50px;  
+  line-height: 50px;
+  text-align: center;
   }
-  .right{
-    position: relative; 
-    top: 65px;
-    left: 150px;
-    text-align: center;
+  .sum input{
+    width: 10%;
+    padding: 5px;
+    border: 1px solid #503027;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 10px;
   }
-  .icon{
+  .sum button{
+    width: 11%;
+    padding: 5px;
+    border: 1px solid #503027;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  #click:hover {
+    background-color: #ffdada;
+    color: black;
+  }
+  span{
+    font-weight: bold;
+  }
+
+  /* Style the Payroll */
+  .container{
+      border: 1px solid #382519 ;
+      background-color: blanchedalmond;
+      padding: 15px;
+      display: block;
+      border-radius: 20px;
+      border-width: 5px;
+      float: left;
+      width: 300px;
+      margin-left: 60px;
+      margin-top: 20px;
+  }
+  .container input{
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #503027;
+      box-sizing: border-box;
+      resize: vertical;
+      border-radius: 10px;
+      display: block;
+  }
+  .container label{
+    display: block;
     text-align: center;
-    position: relative;
-    top: 88px;
+    margin-bottom: 4px;
+  }
+  .button {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #503027;
+      box-sizing: border-box;
+      resize: vertical;
+      border-radius: 10px;
+      display: block;
+      font-weight: bold;
+  }
+  #addbutton:hover {
+      background-color: green;
+      color: white;
+  }
+  #deletebutton:hover {
+      background-color: salmon;
+      color: white;
+  }
+  table{
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid rgb(156, 153, 153);
+    text-align: center;
+    vertical-align: middle;
+  }
+  th, td{
+    border: 1px solid black;
+    padding: 5px;
+  }
+  thead th{
+    width: 14.28%;
+  }
+  thead{
+    background-color: blanchedalmond;
+    color: black;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #eee;
   }

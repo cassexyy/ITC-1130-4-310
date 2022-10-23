@@ -17,11 +17,58 @@
   </div>
 
 <!--Income Tax HTML-->
+<div class="tax">
+  <br>
   <p>
     <label for"taxInput">Taxable Income Value:</label>
     <input id="taxInput" type="number" placeholder="Type Here" oninput="computeTax(this.value)">
   </p>
   <p>Income Tax: <span id="result">0</span></p>
+  <table id="incometable">
+    <thead>
+        <th colspan="2">Amount of Net Taxable  (PHP)</th>
+        <th>Basic Tax + Rate</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Less Than</b></td>
+        <td><b>But Not Over</b></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>-</td>
+      <td>250,000</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td>250,000</td>
+      <td>400,000</td>
+      <td>20% of the excess over 250,000</td>
+    </tr>
+    <tr>
+      <td>400,000</td>
+      <td>800,000</td>
+      <td>P30,000 + 25% of the excess over P400,000</td>
+    </tr>
+    <tr>
+      <td>800,000</td>
+      <td>2,000,000</td>
+      <td>P130,000 + 30% of the excess over P800,000</td>
+    </tr>
+    <tr>
+      <td>2,000,000</td>
+      <td>8,000,000</td>
+      <td>P490,000 + 32% of the excess over P2,000,0000</td>
+    </tr>
+    <tr>
+      <td>8,000,000</td>
+      <td></td>
+      <td>P2,410,000 + 35% of the excess over P8,000,000</td>
+    </tr>
+    </tbody>      
+  </table>
+</div>
+ 
 <!--Income Tax JS-->
 <script>
     function computeTax(taxIncome){

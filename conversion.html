@@ -3,7 +3,6 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">  
-  <script src="https://kit.fontawesome.com/8ff9c5f3c1.js" crossorigin="anonymous"></script>
   <title>Conversion</title>
 </head>
 
@@ -17,30 +16,31 @@
   </div>
 
   <!--Conversion HTML-->
-  <div class="conversion">
-  <label for="unit">Select the unit to convert: </label>
-  <select id="unit" onchange="checkValue();">
-    <option value="getF">Celsius to Fahrenheit</option>
-    <option value="getC">Fahrenheit to Celsius</option>
-    <option value="getFt">Meters to Feet</option>
-    <option value="getM">Feet to Meters</option>
-  </select>
-  <br>
-  
-  <div class="left">
-    <input id="input" type="number" style="height:30px;width:140px;" placeholder="Type Here" oninput="checkValue(this.value)">
+  <div class="conv">
+    <p id="select"> 
+    <label for="unit"><b>Select the unit to convert:</b></label><br><br>
+    <select id="unit" onchange="checkValue();">
+      <option value="getF">Celsius to Fahrenheit</option>
+      <option value="getC">Fahrenheit to Celsius</option>
+      <option value="getFt">Meters to Feet</option>
+      <option value="getM">Feet to Meters</option>
+     </select>
+    </p>
+    <br>
+    <div class="wrapp">
+      <div class="wrap">
+        <div class="left">
+          <input id="input" type="number" style="height:30px;width:140px;" placeholder="Type Here" oninput="checkValue(this.value)">
+          <label for="input"><span id="UOM1">Celsius</span></label> 
+        </div>
+        <p class="equal"> = </p>
+        <div class="right">
+          <p id="convertedoutput"><span id="output"> 0 </span></p>
+          <label for="output"><span id="UOM2">Fahrenheit</span></label>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="left">
-    <label for="input">Enter value to convert:</label> 
-  </div>
-<div class="icon"><i class="fa-solid fa-equals fa-xl" ></i></div>
-  <div class="right">
-    <span id="output"> 0 </span>
-  </div>
-  <div class="right"> 
-    <label for="output">Converted Value: </label>
-  </div>
-</div>
 
   <!--Conversion JS-->
   <script>
@@ -57,10 +57,16 @@
             document.getElementById("output").innerHTML = ((conversion*1.8)+32).toFixed(2);
         }else if(value=="getC"){
             document.getElementById("output").innerHTML = ((conversion-32)*5/9).toFixed(2);
+            document.getElementById("UOM1").innerHTML = "Fahrenheit";
+            document.getElementById("UOM2").innerHTML = "Celsius";
         }else if(value=="getFt"){
             document.getElementById("output").innerHTML = (conversion*3.28084).toFixed(2);
+            document.getElementById("UOM1").innerHTML = "Meters";
+            document.getElementById("UOM2").innerHTML = "Feet";
         }else if(value=="getM"){
             document.getElementById("output").innerHTML = ((conversion/3.28084)).toFixed(2);
+            document.getElementById("UOM1").innerHTML = "Feet";
+            document.getElementById("UOM2").innerHTML = "Meters";
         }
     }
 </script>
