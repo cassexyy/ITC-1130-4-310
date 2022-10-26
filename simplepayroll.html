@@ -116,10 +116,10 @@
             + '<td style="text-align: center">'+(i+1)+'</td>'
             + '<td style="text-align: center">'+payroll[i].name+'</td>'
             + '<td style="text-align: center">'+payroll[i].days+'</td>'
-            + '<td style="text-align: center">'+payroll[i].rate+'</td>'
-            + '<td style="text-align: center">'+payroll[i].gross+'</td>'
-            + '<td style="text-align: center">'+payroll[i].deduction+'</td>'
-            + '<td style="text-align: center">'+payroll[i].net+'</td>'
+            + '<td style="text-align: center">'+payroll[i].rate.toLocaleString('en-US', { style: 'currency', currency: 'PHP' })+'</td>'
+            + '<td style="text-align: center">'+payroll[i].gross.toLocaleString('en-US', { style: 'currency', currency: 'PHP' })+'</td>'
+            + '<td style="text-align: center">'+payroll[i].deduction.toLocaleString('en-US', { style: 'currency', currency: 'PHP' })+'</td>'
+            + '<td style="text-align: center">'+payroll[i].net.toLocaleString('en-US', { style: 'currency', currency: 'PHP' })+'</td>'
             + '</tr>'
         }
        document.getElementById("table").innerHTML="<table>"+theader+tbody+"</table>"

@@ -43,6 +43,14 @@
   }
   
   /* Style the Conversion */
+  .conv{
+    border: 5px solid #352c26;
+    border-radius: 20px;
+    width: auto;
+    margin: 50px 500px; 
+    padding: 20px;
+    background-color: #fcf0de;
+  }
   #unit{  
     border-radius: 5px;
     width: auto;
@@ -52,7 +60,6 @@
   }
   #select{
     text-align: center;
-    margin-top: 50px;
   }
   .wrapp{
     display: grid;
