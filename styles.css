@@ -44,12 +44,14 @@
   
   /* Style the Conversion */
   .conv{
-    border: 5px solid #352c26;
-    border-radius: 20px;
-    width: auto;
-    margin: 50px 500px; 
+    background-color: rgb(252, 241, 230);
+    border: 5px solid rgb(90, 61, 24);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
     padding: 20px;
-    background-color: #fcf0de;
   }
   #unit{  
     border-radius: 5px;
@@ -72,15 +74,13 @@
   }
   .left{
     display: grid;
-    padding-left: 90px;
    }
    .equal {
     font-size: 50px;
-    padding-bottom: 15px;
+    padding: 20px;
    }
    .right{
      display: grid;
-     padding-right: 90px;
    }
    #convertedoutput{
     border: 1px solid black;
